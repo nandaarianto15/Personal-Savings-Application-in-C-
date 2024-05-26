@@ -138,14 +138,14 @@ void registerUser() {
 
     // Periksa apakah password hanya berisi huruf dan angka
     while (true) {
-        bool isAlphanumeric = true;
+        bool hurufAngka = true;
         for (char c : newUser.password) {
             if (!isalnum(c)) {
-                isAlphanumeric = false;
+                hurufAngka = false;
                 break;
             }
         }
-        if (!isAlphanumeric) {
+        if (!hurufAngka) {
             cout << "Password hanya boleh berisi huruf dan angka. Masukkan password lagi: ";
             cin >> newUser.password;
         } else {

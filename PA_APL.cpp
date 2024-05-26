@@ -136,6 +136,23 @@ void registerUser() {
     cout << "Masukkan password: ";
     cin >> newUser.password;    // Input
 
+    // Periksa apakah password hanya berisi huruf dan angka
+    while (true) {
+        bool isAlphanumeric = true;
+        for (char c : newUser.password) {
+            if (!isalnum(c)) {
+                isAlphanumeric = false;
+                break;
+            }
+        }
+        if (!isAlphanumeric) {
+            cout << "Password hanya boleh berisi huruf dan angka. Masukkan password lagi: ";
+            cin >> newUser.password;
+        } else {
+            break;
+        }
+    }
+
     ifstream infile("users.csv");   // Membuka file untuk membaca data user yang sudah terdaftar
     string line;
     newUser.id = 1;     // ID user baru dimulai dari 1
@@ -1354,7 +1371,6 @@ void seeSavingAchieveTarget(int userId, const string& username) {
         cout << left << setw(6) << tabungan.id << setw(18) << tabungan.namaTabungan << setw(15) << tabungan.jumlah << setw(20) << tabungan.maximal_tabungan << endl;
     }
     cout << "------------------------------------------------------------------------" << endl;
-
 
     char pilihan;
     cout << "Apakah Anda ingin menarik semua saldo pada tabungan yang mencapai target? [y//n]: ";

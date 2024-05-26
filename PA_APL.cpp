@@ -415,7 +415,7 @@ void createSaving(int userId, const string& username) {
     string hasMaxTabungan;
     // Meminta user untuk memasukkan apakah ada batas maksimal jumlah tabungan
     while (true) {
-        cout << "Apakah ada maksimal jumlah tabungan? [y//n] : ";
+        cout << "Apakah ada maksimal jumlah tabungan? [y/n] : ";
         cin >> hasMaxTabungan;
 
         if (hasMaxTabungan == "y" || hasMaxTabungan == "Y") {
@@ -439,7 +439,7 @@ void createSaving(int userId, const string& username) {
     string hasTargetTabungan;
     // Meminta user untuk memasukkan apakah ada target waktu tabungan
     while (true) {
-        cout << "Apakah ada target waktu tabungan? [y//n] : ";
+        cout << "Apakah ada target waktu tabungan? [y/n] : ";
         cin >> hasTargetTabungan;
 
         if (hasTargetTabungan == "y" || hasTargetTabungan == "Y") {
@@ -488,7 +488,7 @@ void createSaving(int userId, const string& username) {
                 }
 
                 // Mengatur target tabungan dengan format tanggal yang sesuai
-                newSaving.target_tabungan = to_string(targetDay) + "//" + to_string(targetMonth) + "//" + to_string(targetYear);
+                newSaving.target_tabungan = to_string(targetDay) + "/" + to_string(targetMonth) + "/" + to_string(targetYear);
                 break;
             }
             break; 
@@ -677,7 +677,7 @@ void seeSaving(int userId, const string& username) {
         cout << "----------------------------------------------------------------" << endl;
 
         string response;
-        cout << "Apakah Anda ingin melihat informasi jelas dari salah satu tabungan anda? [y//n]: ";
+        cout << "Apakah Anda ingin melihat informasi jelas dari salah satu tabungan anda? [y/n]: ";
         cin >> response;    // Input
 
         // Memvalidasi input respons dari user
@@ -1150,7 +1150,7 @@ void withdraw(int userId) {
         if (selectedTabunganPtr != nullptr) {
             // Meminta konfirmasi dari user untuk melakukan penarikan
             string confirm;
-            cout << "Apakah kamu yakin ingin menarik uang dari tabungan ini? [y//n]: ";
+            cout << "Apakah kamu yakin ingin menarik uang dari tabungan ini? [y/n]: ";
             cin >> confirm;
 
             if (confirm == "y" || confirm == "Y") {
@@ -1373,7 +1373,7 @@ void seeSavingAchieveTarget(int userId, const string& username) {
     cout << "------------------------------------------------------------------------" << endl;
 
     char pilihan;
-    cout << "Apakah Anda ingin menarik semua saldo pada tabungan yang mencapai target? [y//n]: ";
+    cout << "Apakah Anda ingin menarik semua saldo pada tabungan yang mencapai target? [y/n]: ";
     cin >> pilihan; // Input
 
     // Memproses pilihan user

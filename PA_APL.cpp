@@ -229,7 +229,7 @@ void loginUser() {
                 return;
             }
         }
-        file.close();   // Menutup file setekah selesai di baca
+        file.close();   // Menutup file
     }
 
     system("cls");
